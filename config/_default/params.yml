@@ -7,16 +7,16 @@
 menu:
   - name: home
     url: ""
-    icon: # default use taichi icon, you can use a hexadecimal representation of fontawesome or icon_font, like 'f0c1'
+    icon: false # set false to hide the default taichi icon
   - name: archives
     url: "archives"
-    icon:
+    icon: false
   - name: about
     url: "about"
-    icon:
+    icon: false
   - name: friend
     url: "friend"
-    icon:
+    icon: false
 
 mainSections: ["post"]
 # 年，月，日及时间的格式化样式
@@ -471,7 +471,7 @@ algolia_search:
 ########################################
 
 preloader:
-  enable: true
+  enable: false
   text: 
     zh-CN: 少女祈祷中...
     zh-TW: 少女祈禱中...
