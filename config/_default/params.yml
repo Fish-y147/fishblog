@@ -32,7 +32,7 @@ description: "页面施工中..."
 # subtitle: "少女祈祷中..."
 subtitle:
   typing:
-    enable: false
+    enable: true
     strings:
       # - Sentence 1
       # - Sentence 2
@@ -552,7 +552,7 @@ article_copyright:
 
 # Back To Top
 top:
-  enable: true
+  enable: false
   position: right # left or right
   icon:
     url: "../images/taichi.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
