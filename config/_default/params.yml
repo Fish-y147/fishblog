@@ -107,7 +107,7 @@ footer:
   count: true
   busuanzi: true
   icon:
-    url: "../images/taichi.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
+    url: false # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
     rotate: true
     mask: true # whether to use the images as a mask
 
@@ -590,7 +590,7 @@ sponsor:
     ja: コーヒーを買ってください
     pt-BR: Compre-me um café
   icon:
-    url: "../images/taichi.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
+    url: false # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
     rotate: true
     mask: true # whether to use the images as a mask
   qr:
