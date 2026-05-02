@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Fish&#39;s Blog</title>
-    <link>https://example.org/categories/</link>
+    <title>Fish&#39;s Blog</title>
+    <link>https://example.org/archives/</link>
     <description>Recent content from Fish&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -12,8 +12,10 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
+    <lastBuildDate></lastBuildDate>
     
-    <atom:link href="https://example.org/categories/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+    <atom:link href="https://example.org/archives/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
