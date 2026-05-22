@@ -2,7 +2,7 @@
 title: "WSL2+VSCode的STM32开发指南"
 date: 2026-05-22T12:00:00+08:00
 lastmod: 2026-05-22T12:00:00+08:00
-draft: true
+draft: false
 categories:
   - Tech
 tags:
