@@ -374,9 +374,9 @@ valine:
 # https://waline.js.org/
 waline:
   enable: true
-  serverURL:
+  serverURL: 'https://fishblogwaline.vercel.app'
   # lang: zh-CN # deprecated, use html.lang instead
-  locale: {https://fishblogwaline.vercel.app} # https://waline.js.org/guide/features/i18n.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80
+  locale: {} # https://waline.js.org/guide/features/i18n.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80
   emoji:
     - https://unpkg.com/@waline/emojis@1.2.0/weibo
     - https://unpkg.com/@waline/emojis@1.2.0/alus
