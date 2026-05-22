@@ -408,7 +408,7 @@ gitalk:
   clientSecret: '5f332a223568fc16c16e964ffe5867d60f6a3981'
   repo: 'fishblog'
   owner: 'Fish-y147'
-  admin: ['Fish-y147']
+  admin: 'Fish-y147'
   md5: false
 
 # https://giscus.app/zh-CN
