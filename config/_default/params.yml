@@ -373,10 +373,10 @@ valine:
 
 # https://waline.js.org/
 waline:
-  enable: false
+  enable: true
   serverURL:
   # lang: zh-CN # deprecated, use html.lang instead
-  locale: {} # https://waline.js.org/guide/features/i18n.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80
+  locale: {https://fishblogwaline.vercel.app} # https://waline.js.org/guide/features/i18n.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80
   emoji:
     - https://unpkg.com/@waline/emojis@1.2.0/weibo
     - https://unpkg.com/@waline/emojis@1.2.0/alus
@@ -403,7 +403,7 @@ twikoo:
 
 # https://github.com/gitalk/gitalk/blob/master/readme-cn.md
 gitalk:
-  enable: true
+  enable: false
   clientID: 'Ov23liJiphMRKnWI3soG'
   clientSecret: '5f332a223568fc16c16e964ffe5867d60f6a3981'
   repo: 'fishblog'
