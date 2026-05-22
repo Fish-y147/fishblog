@@ -8,7 +8,7 @@
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 /><title>
-  Hello World | Fish
+  WSL2&#43;VSCode的STM32开发指南 | Fish
 </title>
 <meta name="description" content="擅长打印hello world"/><script>
   window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://fishy.us.ci/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_ex15nbittbh\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
@@ -33,20 +33,20 @@
     type="font/woff2"
     crossorigin="anonymous"
   /><meta property="og:type" content="website" />
-  <meta property="og:title" content="Hello World | Fish" />
+  <meta property="og:title" content="WSL2&#43;VSCode的STM32开发指南 | Fish" />
   <meta
     property="og:description"
     content="擅长打印hello world"
   />
-  <meta property="og:url" content="https://fishy.us.ci/post/hello/" />
+  <meta property="og:url" content="https://fishy.us.ci/post/wslembedded/" />
   <meta
     property="og:site_name"
     content="Fish&#39;s Blog"
   />
   <meta property="og:image" content="https://fishy.us.ci/images/banner.webp" />
   <meta property="article:author" content="Fish" />
-  <meta property="article:published_time" content="2026-05-02T12:25:25&#43;08:00" />
-  <meta property="article:modified_time" content="2026-05-02T12:25:25&#43;08:00" /><meta name="twitter:card" content="summary" /><meta name="twitter:image" content="https://fishy.us.ci/images/banner.webp" />
+  <meta property="article:published_time" content="2026-05-22T12:00:00&#43;08:00" />
+  <meta property="article:modified_time" content="2026-05-22T12:00:00&#43;08:00" /><meta property="article:tag" content="WSL2, archlinux, STM32" /><meta name="twitter:card" content="summary" /><meta name="twitter:image" content="https://fishy.us.ci/images/banner.webp" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.b2165e9bffde6531bb2bc6cfc9d273a126cec766a0ab6bdfe9b703e59e545c01.css" /><link
     rel="preload"
     as="style"
@@ -85,9 +85,9 @@
       </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
   </nav>
   <nav id="sub-nav" aria-label="Secondary navigation"></nav></div>
-<header id="header" aria-label="Site header"><picture><source media="(min-width: 800px)" srcset="/images/banner.webp"><img  fetchpriority="high" src="/images/banner.webp" alt="Hello World"></picture><img alt="Hello World" style="visibility: hidden;"><div id="header-outer">
+<header id="header" aria-label="Site header"><picture><source media="(min-width: 800px)" srcset="/images/banner.webp"><img  fetchpriority="high" src="/images/banner.webp" alt="WSL2&#43;VSCode的STM32开发指南"></picture><img alt="WSL2&#43;VSCode的STM32开发指南" style="visibility: hidden;"><div id="header-outer">
     <div id="header-title"><span id="logo">
-            <h1 data-aos="slide-up">Hello World</h1>
+            <h1 data-aos="slide-up">WSL2&#43;VSCode的STM32开发指南</h1>
           </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
   </div>
 </header><div id="content"
@@ -101,7 +101,26 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#hello-world">hello world</a></li>
+    <li><a href="#wsl2-和相应工具">WSL2 和相应工具</a>
+      <ul>
+        <li><a href="#wsl2">WSL2</a></li>
+        <li><a href="#usbipd-win">usbipd-win</a></li>
+        <li><a href="#vs-code">VS Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#开发环境搭建">开发环境搭建</a>
+      <ul>
+        <li><a href="#archlinux-工具安装">archlinux 工具安装</a></li>
+        <li><a href="#wsl2-中下载-stm32cubemx">WSL2 中下载 STM32CubeMX</a></li>
+        <li><a href="#vs-code-开发-stm32-配置">VS Code 开发 STM32 配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#程序的烧录">程序的烧录</a>
+      <ul>
+        <li><a href="#连接usb">连接USB</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
   </ul>
 </nav>
 </div></div>
@@ -173,30 +192,146 @@
     class="article-date-link icon-calendar"
     data-aos="zoom-in"
   >
-    <time datetime="2026-05-02 12:25:25 &#43;0800 CST" itemprop="datePublished"
-      >2026-05-02</time
+    <time datetime="2026-05-22 12:00:00 &#43;0800 CST" itemprop="datePublished"
+      >2026-05-22</time
     >
     <time style="display: none;" id="post-update-time"
-      >2026-05-02</time
+      >2026-05-22</time
     >
   </span></div>
-</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="测试文章">
-<a class="header-anchor" href="#%e6%b5%8b%e8%af%95%e6%96%87%e7%ab%a0"></a>
-测试文章
-</h1><h2 id="hello-world">
-<a class="header-anchor" href="#hello-world"></a>
-hello world
-</h2><p>hello world</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;hello world&#34;</span><span class="p">);</span>
-</span></span></code></pre></div></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><blockquote>
+<p>这是一篇关于使用 WSL2、 VS Code 进行 STM32 开发的教程。</p>
+</blockquote>
+<h2 id="wsl2-和相应工具">
+<a class="header-anchor" href="#wsl2-%e5%92%8c%e7%9b%b8%e5%ba%94%e5%b7%a5%e5%85%b7"></a>
+WSL2 和相应工具
+</h2><h3 id="wsl2">
+<a class="header-anchor" href="#wsl2"></a>
+WSL2
+</h3><p>WSL（Windows Subsystem for Linux）是微软开发的一项技术，允许用户在Windows系统中直接运行完整的Linux环境，无需虚拟机。WSL2是WSL的升级版本，提供了更高的性能和完全的系统调用兼容性。</p>
+<p>关于 WSL2 下载和相应发行版的选择网上已有很多教程本文不再赘述。</p>
+<blockquote>
+<p>本文使用的发行版为 archlinux<br>
+<a href="https://learn.microsoft.com/zh-cn/windows/wsl/">微软官方WSL文档</a></p>
+</blockquote>
+<h3 id="usbipd-win">
+<a class="header-anchor" href="#usbipd-win"></a>
+usbipd-win
+</h3><p>usbipd-win 是 USB/IP 开源项目，它能将 USB 设备连接到 WSL2 上运行的 Linux 分发版。在 Windows 计算机上配置 USB/IP 项目可以实现常见的开发者 USB 场景，例如刷写 Arduino 或访问智能卡读卡器和本文所用到的连接 ST-link烧录 STM32。</p>
+<blockquote>
+<p><a href="https://learn.microsoft.com/zh-cn/windows/wsl/connect-usb">微软官方下载和使用教程</a></p>
+</blockquote>
+<h3 id="vs-code">
+<a class="header-anchor" href="#vs-code"></a>
+VS Code
+</h3><p>Visual Studio Code（简称VS Code）是微软公司发布现代化、轻量级、跨平台的源代码编辑器，内置多种插件，提供了丰富的功能，支持多种编程语言。本教程将用 VSCode 作为代码编辑器和 STM32 的开发环境。</p>
+<blockquote>
+<p><a href="https://code.visualstudio.com/">VScode下载链接</a></p>
+</blockquote>
+<h2 id="开发环境搭建">
+<a class="header-anchor" href="#%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba"></a>
+开发环境搭建
+</h2><h3 id="archlinux-工具安装">
+<a class="header-anchor" href="#archlinux-%e5%b7%a5%e5%85%b7%e5%ae%89%e8%a3%85"></a>
+archlinux 工具安装
+</h3><blockquote>
+<p>默认已经下载 archlinux 基础工具</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 软件包更新</span>
+</span></span><span class="line"><span class="cl">sudo pacman -Syu
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载java，推荐最低版本是java21</span>
+</span></span><span class="line"><span class="cl">sudo pacman -S jdk-openjdk
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载usb查看工具和解压工具</span>
+</span></span><span class="line"><span class="cl">sudo pacman -S usbutils unzip
+</span></span></code></pre></div><h3 id="wsl2-中下载-stm32cubemx">
+<a class="header-anchor" href="#wsl2-%e4%b8%ad%e4%b8%8b%e8%bd%bd-stm32cubemx"></a>
+WSL2 中下载 STM32CubeMX
+</h3><p>STM32CubeMX（包括STM32CubeMX和STM32CubeMX2）是一款图形化工具，可简化STM32产品的配置，并通过分步引导的过程生成相应的初始化代码。</p>
+<p><a href="https://www.st.com.cn/zh/development-tools/stm32cubemx.html">登录STM32CubeMX下载界面</a>，并登录账号，在底下获取软件处点击 STM32CubeMX （STM32CubeMX2 目前只支持 C5 系列芯片）的 Windows 下拉，选择 Generic Linux，点击下载。</p>
+<p><img src="embedded/1.png" alt="STM32CubeMX的Linux版本获取"></p>
+<p>打开文件资源管理器，将下载后的文件放到剪切到 Linux 目录下合适地方。我创建 <code>~/EmbeddedTool/temp</code> 存储下载时的临时文件，<code>~/EmbeddedTool/STM32CubeMX</code> 存储软件。将解压包剪切至 <code>temp</code> 文件夹。</p>
+<p><img src="embedded/2.png" alt="文件资源管理器"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 之后进入文件目录解压</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> EmbeddedTool/temp
+</span></span><span class="line"><span class="cl">unzip stm32cubemx-lin-v6-17-0.zip
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行安装引导程序</span>
+</span></span><span class="line"><span class="cl">./STM32CubeMX*
+</span></span></code></pre></div><p>在运行安装程序过程中，会显示图形化界面报错，把报错信息复制给 ai 后，安装对应的包就可以。成功打开安装引导界面之后，正常安装就可以（把程序安装在之前创建的目录下方便管理）。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 进入程序目录</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/EmbeddedTool/STM32CubeMX
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行程序</span>
+</span></span><span class="line"><span class="cl">./STM32CubeMX
+</span></span></code></pre></div><p><img src="embedded/3.png" alt="程序成功运行界面"></p>
+<p>为了方便启动添加别名到 <code>shell</code> 配置文件中，我使用的是 <code>fish</code>，添加配置：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nano ~/.config/fish/config.fish
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 在文件末尾添加</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">STM32CubeMX</span><span class="o">=</span><span class="s2">&#34;/home/fish/EmbeddedTool/STM32CubeMX/STM32CubeMX&#34;</span>
+</span></span></code></pre></div><p><img src="embedded/4.png" alt="shell配置文件"></p>
+<p>之后在任意目录下输入 <code>STM32CubeMX</code> 就能打开程序。</p>
+<h3 id="vs-code-开发-stm32-配置">
+<a class="header-anchor" href="#vs-code-%e5%bc%80%e5%8f%91-stm32-%e9%85%8d%e7%bd%ae"></a>
+VS Code 开发 STM32 配置
+</h3><p><a href="https://www.bilibili.com/video/BV1JJ2cBHE2f?spm_id_from=333.788.videopod.sections&amp;vd_source=8a4ff9cc9cd1b483b15aff6c6875315a">查看b站官方视频</a>可以很好了解 VS Code 中 <code>STM32CubeIDE for Visual Studio Code</code> 插件的使用，不用再额外配置环境。之后下载 <code>WSL</code> 插件，使 archlinux 连接到 VS Code。</p>
+<p><img src="embedded/5.png" alt="WSL插件"></p>
+<p><img src="embedded/6.png" alt="连接到arch"></p>
+<p>在 VS Code 左下角可以看到 VS Code 连接成功标志。</p>
+<p><img src="embedded/7.png" alt="连接到arch"></p>
+<p>或者在 WSL 工作目录下输入 <code>code .</code> 也可以连接到 VS Code。</p>
+<p>在 WSL 远程连接中再下载一份 STM32 的插件就可以正常使用了。</p>
+<h2 id="程序的烧录">
+<a class="header-anchor" href="#%e7%a8%8b%e5%ba%8f%e7%9a%84%e7%83%a7%e5%bd%95"></a>
+程序的烧录
+</h2><h3 id="连接usb">
+<a class="header-anchor" href="#%e8%bf%9e%e6%8e%a5usb"></a>
+连接USB
+</h3><p>跟着教程使用使用 <a href="https://learn.microsoft.com/zh-cn/windows/wsl/connect-usb">usbipd</a> 可以将 ST-Link 挂载到 WSL 中。在 WSL 终端中使用 <code>lsusb</code> 命令可以查看挂载USB设备。</p>
+<p><img src="embedded/8.png" alt="挂载成功的ST-Link"></p>
+<p>但每次手动挂载都很麻烦，下载一个 VS Code 插件 <code>USBIP Connect</code> 来实现快速挂载。</p>
+<p><img src="embedded/9.png" alt="usb插件"></p>
+<p>下载成功后点击 VS Code 下方状态栏的 <code>attack</code> 任务按键便可以实现快速挂载。</p>
+<p><img src="embedded/10.png" alt="usb挂载"></p>
+<p>做完上述的一切之后，正准备调试时可能会发现在 <code>Debug</code> 界面上怎么都连接不上 ST-Link。可能是因为用户权限不足和 <code>udev</code>（设备管理器） 没有 ST-Link 的预设规则。从上面 <code>lsusb</code> 命令可以看到，ST-Link 挂在 <code>/001/002</code> 上。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 查看实际设备文件</span>
+</span></span><span class="line"><span class="cl">sudo ls -l /dev/bus/usb/001
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#  输出</span>
+</span></span><span class="line"><span class="cl">crw-rw---- <span class="m">1</span> root root 189, <span class="m">2</span> May <span class="m">22</span> 23:05 <span class="m">002</span>
+</span></span></code></pre></div><p>可以看到只有 <code>root</code> 可读写，可以使用命令 <code>sudo chmod 666 /dev/bus/usb/001/002</code> 来临时获得权限，此时可以发现连接到了一个 USB 设备，可以进行烧录了。因为 Linux <code>/dev/bus/usb/</code> 下的文件是设备插入瞬间动态内存创建的虚拟节点，所以每次重启 WSL 或 插拔 ST-Link 都会失效。</p>
+<p>WSL2 现在已经默认支持 <code>systemd</code> 服务，我们可以自己创建 <code>udev</code> 的 ST-Link 预设文件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 创建并编辑规则文件</span>
+</span></span><span class="line"><span class="cl">sudo nano /etc/udev/rules.d/99-stlink.rules
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 输入规则</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ST-Link V2</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;usb&#34;</span>, ATTR<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">&#34;0483&#34;</span>, ATTR<span class="o">{</span>idProduct<span class="o">}=</span>&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># ST-Link V2.1 (Nucleo)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;usb&#34;</span>, ATTR<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">&#34;0483&#34;</span>, ATTR<span class="o">{</span>idProduct<span class="o">}=</span>&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># ST-Link V3</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;usb&#34;</span>, ATTR<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">&#34;0483&#34;</span>, ATTR<span class="o">{</span>idProduct<span class="o">}=</span>&gt;
+</span></span><span class="line"><span class="cl"><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;usb&#34;</span>, ATTR<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">&#34;0483&#34;</span>, ATTR<span class="o">{</span>idProduct<span class="o">}=</span>&gt;
+</span></span></code></pre></div><p>创建成功后再次使用 <code>USBIP Connect</code> 连接 ST-Link 可以看到，VS Code 已经能正确识别 ST-Link 了，而不是之前那种 普通 USB 的形式。</p>
+<p><img src="embedded/11.png" alt="成功识别设备"></p>
+<h2 id="总结">
+<a class="header-anchor" href="#%e6%80%bb%e7%bb%93"></a>
+总结
+</h2><p>因为 WSL2 使用 WSLg 并支持 <code>systemd</code>，因此成功搭建了一套从 WSL2 启动 CubeMX 进行初始化，并从 WSL 远程连接烧录的 STM32 的 Linux 开发环境。</p>
+<blockquote>
+<p>小白第一次写博客，主要就是想折腾看一看能不能 WSL 开发嵌入式，有什么问题希望多多指正。</p>
+</blockquote>
+</div>
     <footer class="article-footer"><a
           data-aos="zoom-in"
-          href="/post/hello/#comments"
+          href="/post/wslembedded/#comments"
           class="article-comment-link"
         >
           <span
             class="post-comments-count waline-comment-count"
-            data-path="/post/hello/"
+            data-path="/post/wslembedded/"
             itemprop="commentCount"
           ></span>
           留言
@@ -206,29 +341,57 @@ hello world
         >
           <span
             class="waline-pageview-count"
-            data-path="/post/hello/"
+            data-path="/post/wslembedded/"
             >0</span
           >
           <em class="post-meta-item-text">阅读量</em>
-        </span><ul class="article-category-list"></ul>
-<ul class="article-tag-list" itemprop="keywords"></ul>
+        </span><ul class="article-category-list"><li class="article-tag-list-item" data-aos="zoom-in">
+    <a
+      class="article-category-link"
+      href="/categories/tech"
+      data-aos="zoom-in"
+      >Tech</a
+    >
+    </li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/wsl2"
+        rel="tag"
+        >WSL2</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/archlinux"
+        rel="tag"
+        >archlinux</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/stm32"
+        rel="tag"
+        >STM32</a
+      >
+    </li></ul>
 </footer>
   </div><nav
     id="article-nav"
     aria-label="Article navigation"
     data-aos="fade-up"
-  ><div class="article-nav-link-wrap right"><img
+  ><div class="article-nav-link-wrap left"><img
               data-src="https://img.fishy.us.ci/hello.jpg"
               data-sizes="auto"
-              alt="WSL2&#43;VSCode的STM32开发指南"
+              alt="Hello World"
               class="lazyload"
             /><a
-          href="/post/wslembedded/"
-          aria-label="后一篇:WSL2&#43;VSCode的STM32开发指南"
-          title="后一篇:WSL2&#43;VSCode的STM32开发指南"
+          href="/post/hello/"
+          aria-label="前一篇:Hello World"
+          title="前一篇:Hello World"
         ></a>
-        <div class="article-nav-caption">后一篇</div>
-        <h3 class="article-nav-title">WSL2&#43;VSCode的STM32开发指南</h3>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">Hello World</h3>
       </div></nav></article><section id="comments" data-aos="fade-up">
 <div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
   <div class="comment-selector">
@@ -288,7 +451,26 @@ hello world
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#hello-world">hello world</a></li>
+    <li><a href="#wsl2-和相应工具">WSL2 和相应工具</a>
+      <ul>
+        <li><a href="#wsl2">WSL2</a></li>
+        <li><a href="#usbipd-win">usbipd-win</a></li>
+        <li><a href="#vs-code">VS Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#开发环境搭建">开发环境搭建</a>
+      <ul>
+        <li><a href="#archlinux-工具安装">archlinux 工具安装</a></li>
+        <li><a href="#wsl2-中下载-stm32cubemx">WSL2 中下载 STM32CubeMX</a></li>
+        <li><a href="#vs-code-开发-stm32-配置">VS Code 开发 STM32 配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#程序的烧录">程序的烧录</a>
+      <ul>
+        <li><a href="#连接usb">连接USB</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
   </ul>
 </nav>
 </div></div>
@@ -394,9 +576,9 @@ hello world
   <div><script data-pjax>
         window.REIMU_POST = {
           author: "Fish",
-          title: "Hello World",
-          url: "https:\/\/fishy.us.ci\/post\/hello\/",
-          description: " 测试文章 hello world hello world\nprintf(\u0026#34;hello world\u0026#34;); ",
+          title: "WSL2\u002bVSCode的STM32开发指南",
+          url: "https:\/\/fishy.us.ci\/post\/wslembedded\/",
+          description: " 这是一篇关于使用 WSL2、 VS Code 进行 STM32 开发的教程。\nWSL2 和相应工具 WSL2 WSL（Windows Subsystem for Linux）是微软开发的一项技术，允许用户在Windows系统中直接运行完整的Linux环境，无需虚拟机。WSL2是WSL的升级版本，提供了更高的性能和完全的系统调用兼容性。\n关于 WSL2 下载和相应发行版的选择网上已有很多教程本文不再赘述。\n本文使用的发行版为 archlinux\n微软官方WSL文档\nusbipd-win usbipd-win 是 USB\/IP 开源项目，它能将 USB 设备连接到 WSL2 上运行的 Linux …",
           cover: "https:\/\/fishy.us.ci\/images\/banner.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax ></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

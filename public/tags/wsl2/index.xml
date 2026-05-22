@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fish&#39;s Blog</title>
-    <link>https://fishy.us.ci/</link>
+    <title>WSL2 on Fish&#39;s Blog</title>
+    <link>https://fishy.us.ci/tags/wsl2/</link>
     <description>Recent content from Fish&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Fri, 22 May 2026 12:00:00 +0800</lastBuildDate>
     
     
-    <atom:link href="https://fishy.us.ci/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://fishy.us.ci/tags/wsl2/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -85,32 +85,6 @@ WSL2 中下载 STM32CubeMX
       </description>
       
         <category>Tech</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>Hello World</title>
-      <link>https://fishy.us.ci/post/hello/</link>
-      <pubDate>Sat, 02 May 2026 12:25:25 &#43;0800</pubDate>
-      <author>xxx@example.com (Fish)</author>
-      <guid>https://fishy.us.ci/post/hello/</guid>
-      <description>
-        <![CDATA[<h1>Hello World</h1><p>作者：Fish（xxx@example.com）</p>
-        
-          <h1 id="测试文章">
-<a class="header-anchor" href="#%e6%b5%8b%e8%af%95%e6%96%87%e7%ab%a0"></a>
-测试文章
-</h1><h2 id="hello-world">
-<a class="header-anchor" href="#hello-world"></a>
-hello world
-</h2><p>hello world</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;hello world&#34;</span><span class="p">);</span>
-</span></span></code></pre></div>
-        
-        <hr><p>本文2026-05-02首发于<a href='https://fishy.us.ci/'>Fish's Blog</a>，最后修改于2026-05-02</p>]]>
-      </description>
       
     </item>
     
